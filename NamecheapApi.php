@@ -19,5 +19,9 @@ class NamecheapApi extends Controller
         private function setDefault() {
 
         }
+
+        private function setHosts($domain) {
+
+        }
 }
 
