@@ -29,7 +29,7 @@ class NamecheapApi
         return $this->makeTheRequest($response);
     }
 
-    public function buy($domain, $address) {
+    public function buy($domain, $address, $years = 1) {
         $response = file_get_contents($this->base_uri.
             "ApiUser=".$this->user.
             "&ApiKey=".$this->apiKey.
@@ -37,7 +37,7 @@ class NamecheapApi
             "&Command="."namecheap.domains.create".
             "&ClientIp=".$this->ip.
             "&DomainName=".$domain.
-            "&Years=1".
+            "&Years=".$years.
             "&AuxBillingFirstName=".$address['fName'].
             "&AuxBillingLastName=".$address['lName'].
             "&AuxBillingAddress1=".urlencode($address['address']).
