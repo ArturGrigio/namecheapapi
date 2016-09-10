@@ -95,9 +95,9 @@ class NamecheapApi
         $recordString = "";
         foreach ($records as $record) {
             $recordString .=
-                "&HostName1=".$record['name'].
-                "&RecordType1=".$record['type'].
-                "&Address1=".$this->ip.
+                "&HostName1=".$record->name.
+                "&RecordType1=".$record->type.
+                "&Address1=".($record->ip) ? $record->ip : $this->ip.
                 "&TTL1=1200";
         }
         $response = file_get_contents($this->base_uri.
